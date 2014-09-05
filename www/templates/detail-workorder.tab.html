@@ -1,0 +1,32 @@
+<ion-view title="{{friend.name}}" ng-init="findOne()">
+    <ion-content has-header="true" padding="true">
+        <div class="item item-divider" ng-show="lastStatus">Currently:  {{ lastStatus }} ({{ lastTime | date:'yyyy-MM-dd HH:mm:ss' }})</div>
+        <div class="item item-divider"><button class="btn" ng-click="showOptions()">Change Status</button>
+            <button class="btn" ng-click="takePicture()">Add Photo</button></div>
+        <a href="/#/tab/workorder/complete/{{ workorder._id}}">Add Photo</a></div>
+
+        <div class="card">
+            <div class="item item-divider">Dates</div>
+            <div class="item item-text-wrap">Scheduled: {{workorder.scheduledDate | date:short }}</div>
+            <div class="item item-text-wrap">Due: {{workorder.dueDate | date:short }}</div>
+            <div class="item item-text-wrap">Status: {{workorder.status}}</div>
+        </div>
+        <div class="card" ng-show="workorder.detail_technician">
+            <div class="item item-divider">Tech Notes</div>
+            <div class="item item-text-wrap">{{workorder.detail_technician }}</div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">Property</div>
+            <div class="item item-text-wrap">{{workorder.property.address}} <span ng-if="workorder.unit">({{workorder.unit.name}})</span></div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">Description</div>
+            <div class="item item-text-wrap">{{workorder.description}}</div>
+        </div>
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue=true>
+            <ion-slide ng-repeat="photo in workorder.photos">
+                <div><img src="{{ photo.url }}" width="250"></div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

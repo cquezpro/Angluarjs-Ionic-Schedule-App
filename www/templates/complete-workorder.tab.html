@@ -1,0 +1,13 @@
+<ion-view title="Work order Completed" ng-init="findOne()">
+    <ion-content class="has-header">
+        <p>You have completed work order #{{workorder.number}}.  Please upload completion photos and enter notes.  Be sure and submit when finished.</p>
+        <form>
+         <div ng-if="!notes.submitted">
+            <textarea name="notes" id="notes" ng-model="notes.note"></textarea>
+            <button class="btn btn-primary" ng-click="completeWorkorder()">Submit Notes</button>
+
+         </div>
+            <button class="btn btn-primary" ng-click="takePicture()">Add a Photo</button>
+        </form>
+    </ion-content>
+</ion-view>

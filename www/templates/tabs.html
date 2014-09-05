@@ -1,0 +1,36 @@
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <ion-nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top">
+
+
+    <!-- Settings Tab -->
+    <ion-tab title="Login" icon="icon ion-log-in" href="#/tab/signin">
+        <ion-nav-view name="tab-signin"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Dashobard Tab -->
+    <ion-tab title="Current Work Order" icon="icon ion-wrench" href="#/tab/workorder/current">
+        <ion-nav-view name="tab-workorder-current"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Workorders Tab -->
+    <ion-tab title="Your Work" icon="icon ion-settings" href="#/tab/workorder">
+        <ion-nav-view name="tab-workorder"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Timeclock Tab -->
+  <ion-tab title="Time Clock" icon="icon ion-ios7-stopwatch" href="#/tab/timeclock">
+    <ion-nav-view name="tab-timeclock"></ion-nav-view>
+  </ion-tab>
+
+
+
+
+
+
+
+
+</ion-tabs>

@@ -1,0 +1,27 @@
+<ion-view title="Signin">
+    <ion-content class="has-header padding">
+        <div ng-hide="authentication.user">
+        <form data-ng-submit="signin()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email Address" data-ng-model="credentials.email" />
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" data-ng-model="credentials.password" />
+                </label>
+            </div>
+            <button class="button" type="submit">Login</button>
+            {{ error }}
+       </form>
+            </div>
+        <div ng-show="authentication.user">
+            You are logged in as {{ authentication.user.email}}.<br/>
+           <a href="/auth/signout">Logout</a>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+

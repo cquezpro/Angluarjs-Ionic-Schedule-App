@@ -1,0 +1,18 @@
+<ion-view title="Your Work" ng-init="find()">
+  <ion-content class="has-header">
+    <ion-list>
+        Today:
+      <ion-item ng-repeat="workorder in workorders" type="item-text-wrap" ui-sref="tab.workorder_detail({workorderId: workorder._id, })" on-drag-down="onDragDown()">
+          <div class="item item-divider">
+              Scheduled Date: {{ workorder.scheduledDate | date:short }}<br/>
+              Due Date: {{ workorder.dueDate | date:short }}<br/>
+              Status: {{ workorder.status }}<br/>
+              Description: {{ workorder.description}}<br/>
+              Tech Notes: {{ workorder.detail_technician}}<br/>
+              Property: {{ workorder.property.address}} <span ng-if="workorder.unit">({{workorder.unit.name}})</span><br>
+          </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
