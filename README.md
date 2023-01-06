@@ -1,5 +1,5 @@
-This schedule app was made by angularjs and ionicframework with cordova.
+This schedule app is made by angularjs and ionic framework with cordova.
 
-Angualrjs Authentication, Cordova File upload, Camera API
+Angularjs Authentication, Cordova File upload, Camera API
 
 REST API 1
